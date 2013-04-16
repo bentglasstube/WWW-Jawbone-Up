@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "Unofficial Jawbone UP API",
    "author" : [
       "Alan Berndt <alan@eatabrick.org>"
    ],
@@ -36,16 +36,32 @@
       },
       "runtime" : {
          "requires" : {
-            "perl" : "5.008005"
+            "Carp" : "0",
+            "DateTime" : "0",
+            "JSON" : "2.0",
+            "LWP::UserAgent" : "0",
+            "perl" : "5.010"
          }
       },
       "test" : {
          "requires" : {
+            "Test::Approx" : "0",
             "Test::More" : "0.88"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.01"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/bentglasstube/WWW-Jawbone-Up/issues"
+      },
+      "homepage" : "https://github.com/bentglasstube/WWW-Jawbone-Up",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/bentglasstube/WWW-Jawbone-Up.git",
+         "web" : "https://github.com/bentglasstube/WWW-Jawbone-Up"
+      }
+   },
+   "version" : "1.32.0"
 }
 
