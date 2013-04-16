@@ -1,0 +1,6 @@
+/WWW-Jawbone-Up-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
