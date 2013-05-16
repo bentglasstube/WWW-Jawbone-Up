@@ -74,8 +74,8 @@ sub _request {
 sub __encode {
   my ($hash) = @_;
 
-  return join '&', map
-    sprintf('%s=%s', uri_escape($_), uri_escape($hash->{$_})),
+  return join '&',
+    map sprintf('%s=%s', uri_escape($_), uri_escape($hash->{$_})),
     keys %$hash;
 }
 
@@ -108,11 +108,12 @@ sub connect {
 
   my $self = bless {}, $class;
 
-  my $json = $self->_post(URI_BASE . '/user/signin/login', {
-    service => 'nudge',
-    email   => $email,
-    pwd     => $password,
-  });
+  my $json = $self->_post(
+    URI_BASE . '/user/signin/login', {
+      service => 'nudge',
+      email   => $email,
+      pwd     => $password,
+    });
 
   if ($json->{error}) {
     carp $json->{error}{msg};
@@ -157,7 +158,7 @@ sub feed {
 
   my $json = $self->_get(URI_API . '/users/@me/social', $options);
 
-  return map WWW::Jawbone::Up::Feed->new($_), @{$json->{data}{feed}};
+  return map WWW::Jawbone::Up::Feed->new($_), @{ $json->{data}{feed} };
 }
 
 =head2 score($date)
@@ -196,7 +197,8 @@ sub band {
 
   my $json = $self->_get(URI_API . '/users/@me/band', $options);
 
-  return map WWW::Jawbone::Up::Tick->new($_->{value}), @{$json->{data}{ticks}};
+  return map WWW::Jawbone::Up::Tick->new($_->{value}),
+    @{ $json->{data}{ticks} };
 }
 
 =head2 workouts($date)
@@ -215,7 +217,7 @@ sub workouts {
 
   my $json = $self->_get(URI_API . '/users/@me/workouts', $options);
 
-  return map WWW::Jawbone::Up::Workout->new($_), @{$json->{data}{items}};
+  return map WWW::Jawbone::Up::Workout->new($_), @{ $json->{data}{items} };
 }
 
 1;

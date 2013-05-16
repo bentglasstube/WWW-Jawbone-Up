@@ -2,7 +2,8 @@ use strict;
 use Test::More tests => 2;
 use WWW::Jawbone::Up::Mock;
 
-my $bad = WWW::Jawbone::Up::Mock->connect('alan@eatabrick.org', 'wrongpassword');
+my $bad =
+  WWW::Jawbone::Up::Mock->connect('alan@eatabrick.org', 'wrongpassword');
 
 is($bad, undef, 'invalid credentials');
 

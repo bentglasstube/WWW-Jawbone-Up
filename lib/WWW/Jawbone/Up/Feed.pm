@@ -8,9 +8,10 @@ use base 'WWW::Jawbone::Up::JSON';
 
 use DateTime;
 
-__PACKAGE__->add_accessors(qw(title date type reached_goal), {
-  timezone => 'tz',
-});
+__PACKAGE__->add_accessors(
+  qw(title date type reached_goal), {
+    timezone => 'tz',
+  });
 
 __PACKAGE__->add_time_accessors(qw(created updated));
 

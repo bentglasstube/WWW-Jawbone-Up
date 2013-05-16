@@ -6,9 +6,10 @@ use warnings;
 
 use base 'WWW::Jawbone::Up::JSON';
 
-__PACKAGE__->add_accessors(qw(first last name short_name), {
-  friend => 'user_is_friend'
-});
+__PACKAGE__->add_accessors(
+  qw(first last name short_name), {
+    friend => 'user_is_friend'
+  });
 
 sub image {
   my $self = shift;

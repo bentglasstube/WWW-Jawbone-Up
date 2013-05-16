@@ -11,7 +11,7 @@ sub patch {
   my ($class, $method, $code) = @_;
 
   no strict 'refs';
-  *{$class . '::' . $method} = $code;
+  *{ $class . '::' . $method } = $code;
 }
 
 sub add_accessors {
@@ -24,7 +24,8 @@ sub add_accessors {
       }
       when ('HASH') {
         foreach (keys %$arg) {
-          $class->patch($_, sub { my $self = shift; return $self->{$arg->{$_}} });
+          $class->patch($_,
+            sub { my $self = shift; return $self->{ $arg->{$_} } });
         }
       }
       default {
@@ -37,30 +38,32 @@ sub add_accessors {
 sub add_subclass {
   my ($class, $method, $subclass) = @_;
 
-  $class->patch($method => sub {
-    my $self = shift;
+  $class->patch(
+    $method => sub {
+      my $self = shift;
 
-    if (ref $self->{$method} ne $subclass) {
-      eval "use $subclass";
-      croak $@ if $@;
-      $self->{$method} = $subclass->new($self->{$method});
-    }
+      if (ref $self->{$method} ne $subclass) {
+        eval "use $subclass";
+        croak $@ if $@;
+        $self->{$method} = $subclass->new($self->{$method});
+      }
 
-    return $self->{$method};
-  });
+      return $self->{$method};
+    });
 }
 
 sub add_time_accessors {
   my $class = shift;
 
   foreach my $method (@_) {
-    $class->patch($method => sub {
-      my $self = shift;
-      return DateTime->from_epoch(
-        epoch     => $self->{'time_' . $method},
-        time_zone => $self->timezone,
-      );
-    });
+    $class->patch(
+      $method => sub {
+        my $self = shift;
+        return DateTime->from_epoch(
+          epoch     => $self->{ 'time_' . $method },
+          time_zone => $self->timezone,
+        );
+      });
   }
 }
 

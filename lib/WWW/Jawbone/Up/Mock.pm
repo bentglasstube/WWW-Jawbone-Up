@@ -26,47 +26,45 @@ sub not_found {
 our %_RESPONSE = (
   profile => {
     data => {
-      last => 'Berndt',
-      name => 'Alan Berndt',
-      short_name => 'Alan',
-      image => 'user/image/i/photo.png',
-      first => 'Alan',
+      last           => 'Berndt',
+      name           => 'Alan Berndt',
+      short_name     => 'Alan',
+      image          => 'user/image/i/photo.png',
+      first          => 'Alan',
       user_is_friend => 1,
     },
   },
   feed => {
     data => {
-      feed => [
-        {
+      feed => [ {
           time_updated => 1366008300,
-          title => '9,885 steps',
-          image => '/nudge/api/v.1.32/moves/xid/image/time',
+          title        => '9,885 steps',
+          image        => '/nudge/api/v.1.32/moves/xid/image/time',
           reached_goal => undef,
           time_created => 1366008300,
-          tz => 'America/Phoenix',
-          type => 'move',
-          user => {
-            last => 'Berndt',
-            name => 'Alan Berndt',
+          tz           => 'America/Phoenix',
+          type         => 'move',
+          user         => {
+            last       => 'Berndt',
+            name       => 'Alan Berndt',
             short_name => 'Alan',
-            image => 'user/image/i/photo.png',
-            first => 'Alan',
+            image      => 'user/image/i/photo.png',
+            first      => 'Alan',
           },
-        },
-        {
+        }, {
           time_updated => 1365960060,
-          title => 'for 8h 17m',
-          image => '/nudge/api/v.1.32/sleeps/xid/image/time',
+          title        => 'for 8h 17m',
+          image        => '/nudge/api/v.1.32/sleeps/xid/image/time',
           reached_goal => 1,
           time_created => 1365960060,
-          tz => 'America/Phoenix',
-          type => 'sleep',
-          user => {
-            last => 'Berndt',
-            name => 'Alan Berndt',
+          tz           => 'America/Phoenix',
+          type         => 'sleep',
+          user         => {
+            last       => 'Berndt',
+            name       => 'Alan Berndt',
             short_name => 'Alan',
-            image => 'user/image/i/photo.png',
-            first => 'Alan',
+            image      => 'user/image/i/photo.png',
+            first      => 'Alan',
           },
         },
       ],
@@ -75,21 +73,21 @@ our %_RESPONSE = (
   score => {
     data => {
       move => {
-        distance => 7.553,
-        longest_idle => 9000,
-        calories => 608.235829421,
-        bg_steps => 9885,
+        distance       => 7.553,
+        longest_idle   => 9000,
+        calories       => 608.235829421,
+        bg_steps       => 9885,
         longest_active => 932,
-        bmr_calories => 2201.52221491,
-        active_time => 5135,
+        bmr_calories   => 2201.52221491,
+        active_time    => 5135,
       },
       sleep => {
-        awakenings => 2,
-        light => 10243,
+        awakenings    => 2,
+        light         => 10243,
         time_to_sleep => 693,
-        goals => {
-          bedtime => [ 10, undef ],
-          deep => [ 15190, undef ],
+        goals         => {
+          bedtime => [ 10,    undef ],
+          deep    => [ 15190, undef ],
         },
         awake => 2091,
       },
@@ -97,16 +95,15 @@ our %_RESPONSE = (
   },
   band => {
     data => {
-      ticks => [
-        {
+      ticks => [ {
           value => {
-            distance => 25,
+            distance    => 25,
             active_time => 15,
-            aerobic => undef,
-            calories => 1.54764223099,
-            steps => 31,
-            time => 1365980040,
-            speed => 1,
+            aerobic     => undef,
+            calories    => 1.54764223099,
+            steps       => 31,
+            time        => 1365980040,
+            speed       => 1,
           },
         },
       ],
@@ -114,19 +111,18 @@ our %_RESPONSE = (
   },
   workouts => {
     data => {
-      items => [
-        {
+      items => [ {
           time_completed => 1364827020,
-          title => 'Workout',
-          is_complete => 1,
-          time_updated => 1364828785,
-          details => {
+          title          => 'Workout',
+          is_complete    => 1,
+          time_updated   => 1364828785,
+          details        => {
             intensity => undef,
-            tz => 'America/Phoenix',
-            calories => 236.39623734,
-            km => 2.156,
-            steps => 3221,
-            time => 1781,
+            tz        => 'America/Phoenix',
+            calories  => 236.39623734,
+            km        => 2.156,
+            steps     => 3221,
+            time      => 1781,
           },
           time_created => 1364825239,
         },

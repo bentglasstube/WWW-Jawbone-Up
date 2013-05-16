@@ -13,5 +13,5 @@ ok(!$ticks[0]->aerobic, 'not aerobic');
 is_approx_num($ticks[0]->calories, 1.55, 'calories', 0.01);
 is($ticks[0]->distance, 25, 'distance');
 is_approx_num($ticks[0]->speed, 1.00, 'speed', 0.01);
-is($ticks[0]->steps, 31, 'steps');
-is($ticks[0]->time, 1365980040, 'time');
+is($ticks[0]->steps, 31,         'steps');
+is($ticks[0]->time,  1365980040, 'time');
