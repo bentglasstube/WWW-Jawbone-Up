@@ -18,19 +18,15 @@ sub add_accessors {
   my $class = shift;
 
   foreach my $arg (@_) {
-    given (ref $arg) {
-      when ('') {
-        $class->patch($arg, sub { my $self = shift; return $self->{$arg} });
+    if (ref $arg eq '') {
+      $class->patch($arg, sub { my $self = shift; return $self->{$arg} });
+    } elsif (ref $arg eq 'HASH') {
+      foreach my $name (keys %$arg) {
+        my $value = $arg->{$name};
+        $class->patch($name, sub { my $self = shift; return $self->{$value} });
       }
-      when ('HASH') {
-        foreach (keys %$arg) {
-          $class->patch($_,
-            sub { my $self = shift; return $self->{ $arg->{$_} } });
-        }
-      }
-      default {
-        croak "Invalid argument type: " . ref $arg;
-      }
+    } else {
+      croak "Invalid argument type: " . ref $arg;
     }
   }
 }

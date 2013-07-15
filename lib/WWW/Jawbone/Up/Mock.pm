@@ -144,25 +144,18 @@ sub _get {
 
   unauthorized unless $self->{token};
 
-  given ($uri) {
-    when (URI_API . '/users/@me') {
-      return $_RESPONSE{profile};
-    }
-    when (URI_API . '/users/@me/social') {
-      return $_RESPONSE{feed};
-    }
-    when (URI_API . '/users/@me/score') {
-      return $_RESPONSE{score};
-    }
-    when (URI_API . '/users/@me/band') {
-      return $_RESPONSE{band};
-    }
-    when (URI_API . '/users/@me/workouts') {
-      return $_RESPONSE{workouts};
-    }
-    default {
-      not_found;
-    }
+  if ($uri eq URI_API . '/users/@me') {
+    return $_RESPONSE{profile};
+  } elsif ($uri eq URI_API . '/users/@me/social') {
+    return $_RESPONSE{feed};
+  } elsif ($uri eq URI_API . '/users/@me/score') {
+    return $_RESPONSE{score};
+  } elsif ($uri eq URI_API . '/users/@me/band') {
+    return $_RESPONSE{band};
+  } elsif ($uri eq URI_API . '/users/@me/workouts') {
+    return $_RESPONSE{workouts};
+  } else {
+    not_found;
   }
 }
 
