@@ -2,6 +2,9 @@ Revision history for WWW-Jawbone-Up
 
 {{$NEXT}}
 
+1.32.2  2014-04-21 16:00:40 MST
+        - Change to MIT license
+
 1.32.1  2013-07-15 11:18:21 MST
         - Fixes for perl 5.18
 

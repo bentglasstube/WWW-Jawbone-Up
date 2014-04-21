@@ -4,9 +4,9 @@
       "Alan Berndt <alan@eatabrick.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Milla version v1.0.2, Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Milla version v1.0.4, Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.120921",
    "license" : [
-      "perl_5"
+      "mit"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -26,7 +26,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build::Tiny" : "0.023"
+            "Module::Build::Tiny" : "0.035"
          }
       },
       "develop" : {
@@ -62,6 +62,6 @@
          "web" : "https://github.com/bentglasstube/WWW-Jawbone-Up"
       }
    },
-   "version" : "1.32.1"
+   "version" : "1.32.2"
 }
 
