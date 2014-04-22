@@ -2,6 +2,9 @@ Revision history for WWW-Jawbone-Up
 
 {{$NEXT}}
 
+1.32.3  2014-04-22 12:02:10 MST
+        - Force locale when using Test::Approx
+
 1.32.2  2014-04-21 16:00:40 MST
         - Change to MIT license
 
