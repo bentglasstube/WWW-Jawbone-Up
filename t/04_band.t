@@ -1,5 +1,7 @@
 use strict;
 
+BEGIN { $ENV{LC_ALL} = 'C'; } # Test::Approx does not respect locales
+
 use Test::More tests => 7;
 use Test::Approx;
 use WWW::Jawbone::Up::Mock;
