@@ -45,6 +45,7 @@
       },
       "test" : {
          "requires" : {
+            "POSIX" : "0",
             "Test::Approx" : "0",
             "Test::More" : "0.88"
          }
@@ -62,6 +63,9 @@
          "web" : "https://github.com/bentglasstube/WWW-Jawbone-Up"
       }
    },
-   "version" : "1.32.3"
+   "version" : "1.32.4",
+   "x_contributors" : [
+      "Slaven Rezic <slaven@rezic.de>"
+   ]
 }
 

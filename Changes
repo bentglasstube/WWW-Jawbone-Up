@@ -2,6 +2,9 @@ Revision history for WWW-Jawbone-Up
 
 {{$NEXT}}
 
+1.32.4  2014-04-22 16:20:04 MST
+        - Correct failing tests because of Locales, thanks to Slaven Rezić
+
 1.32.3  2014-04-22 12:02:10 MST
         - Force locale when using Test::Approx
 
